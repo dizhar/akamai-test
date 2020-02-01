@@ -5,13 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 30000 --reporter mochawesome lib/index.js",
-    "lint": "tslint --fix src/**/*.ts",
     "moveJsonFiles": "copyfiles -u 1 src/selectors/* src/config/* src/files/* lib",
-    "build": "npm run lint && rimraf lib && npm run moveJsonFiles && tsc --outDir lib",
+    "build": "rimraf lib && npm run moveJsonFiles && tsc --outDir lib",
     "testlocal": "npm run build && npm run test"
   },
   "pre-commit": [
-    "lint",
     "build",
     "test"
   ],
