@@ -1,5 +1,5 @@
 {
-    "baseURL": "http://the-internet.herokuapp.com",
+    "baseURL": "https://www.delta.com/mea/en",
     "login": "/login",
     "checkboxes": "/checkboxes",
     "hovers": "/hovers",

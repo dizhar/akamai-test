@@ -1,11 +1,10 @@
 import BasePage from './BasePage';
 import SecuredPage from './SecuredPage';
-import ILoginPage from '../interfaces/ILoginPage';
 import { ElementHandle } from 'puppeteer';
 const selectors = require('../selectors/login.json');
 const presenceLocators = require('../selectors/screenPresenceLocators.json');
 
-export default class Login extends BasePage implements ILoginPage {
+export default class Login extends BasePage {
     private loginSelectors: any;
     private presenceLocators: any;
     constructor(page) {

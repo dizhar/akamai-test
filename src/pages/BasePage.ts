@@ -1,7 +1,6 @@
-import IBasePage from '../interfaces/IBasePage';
 
 const baseSelectors = require('../selectors/basePage.json');
-export default class BasePage implements IBasePage {
+export default class BasePage{
     public page: any;
     protected baseSelectors: any;
 

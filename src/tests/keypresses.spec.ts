@@ -16,7 +16,6 @@ describe('Key presses test', () => {
     before(async () => {
         browser = await launchPuppeteer();
         page = await browser.newPage();
-        await page.setViewport({ width: 1280, height: 1024 });
         navMenu = new NavigationMenu(page);
     });
 

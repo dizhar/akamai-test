@@ -1,0 +1,137 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-01-31T00:28:27.617Z",
+    "end": "2020-01-31T00:28:36.705Z",
+    "duration": 9088,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ab3d27e8-f630-452a-80dd-97f1cd1ad88b",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5c7bda06-a2ab-4877-8070-093a22f7bd33",
+          "title": "Authentication test: ",
+          "fullFile": "C:\\puppeteer-api-typescript-examples\\lib\\index.js",
+          "file": "\\lib\\index.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "Authentication test:  \"before all\" hook",
+              "timedOut": false,
+              "duration": 7990,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, launchPuppeteer_1.default()];\n                case 1:\n                    browser = _a.sent();\n                    return [4, browser.newPage()];\n                case 2:\n                    page = _a.sent();\n                    navMenu = new NavigationMenu_1.default(page);\n                    return [4, navMenu.loadpage()];\n                case 3:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "9f6aa1f5-d4f4-452b-b4c6-5c6f8871087f",
+              "parentUUID": "5c7bda06-a2ab-4877-8070-093a22f7bd33",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "Authentication test:  \"after all\" hook",
+              "timedOut": false,
+              "duration": 765,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, browser.close()];\n                case 1:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "8e9347c1-51c5-49e7-be4c-8002c5e0c042",
+              "parentUUID": "5c7bda06-a2ab-4877-8070-093a22f7bd33",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login test",
+              "fullTitle": "Authentication test:  Login test",
+              "timedOut": false,
+              "duration": 250,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        var performanceTiming, _a, _b, error_1;\n        return __generator(this, function (_c) {\n            switch (_c.label) {\n                case 0:\n                    _c.trys.push([0, 4, , 5]);\n                    return [4, page.addScriptTag({ path: './lib/files/injectable.js' })];\n                case 1:\n                    _c.sent();\n                    _b = (_a = JSON).parse;\n                    return [4, page.evaluate(function () { return JSON.stringify(window.performance.timing); })];\n                case 2: return [4, _b.apply(_a, [_c.sent()])];\n                case 3:\n                    performanceTiming = _c.sent();\n                    console.log(performanceTiming);\n                    page.on('pageerror', function (err) {\n                        console.log('pageerror: ', err);\n                    });\n                    chai_1.expect(true).to.equal(true);\n                    return [3, 5];\n                case 4:\n                    error_1 = _c.sent();\n                    console.log(error_1);\n                    return [3, 5];\n                case 5: return [2];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "2a890e3e-3b00-432e-a16d-b0164dbe38b8",
+              "parentUUID": "5c7bda06-a2ab-4877-8070-093a22f7bd33",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2a890e3e-3b00-432e-a16d-b0164dbe38b8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 250,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 30000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": null,
+      "version": "4.1.0"
+    }
+  }
+}

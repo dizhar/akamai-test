@@ -3,6 +3,7 @@ import Checkboxes from './Checkboxes';
 import HoversPage from './HoversPage';
 import JavaScriptAlerts from './JavaScriptAlerts';
 import KeyPresses from './KeyPresses';
+import { Page } from 'puppeteer';
 
 const config = require('../config/config.json');
 const selectors = require('../selectors/navMenu.json');
@@ -10,9 +11,18 @@ const selectors = require('../selectors/navMenu.json');
 const baseURL = config.baseURL;
 
 export default class NavigationMenu {
-    page: any;
+    page: Page;
     constructor(page) {
         this.page = page;
+    }
+
+    public async  loadpage() {
+
+        await this.page.goto(baseURL, {
+            waitUntil: ['load'],
+        });
+
+        await this.page.waitFor(3000);
     }
 
     private async gotoPage(path) {

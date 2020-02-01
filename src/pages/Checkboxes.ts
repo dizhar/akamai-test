@@ -1,11 +1,10 @@
 import BasePage from './BasePage';
-import ICheckboxesPage from '../interfaces/ICheckboxesPage';
 import { ElementHandle } from 'puppeteer';
 
 const selectors = require('../selectors/checkboxes.json');
 const presenceLocators = require('../selectors/screenPresenceLocators.json');
 
-export default class Checkboxes extends BasePage implements ICheckboxesPage {
+export default class Checkboxes extends BasePage{
     private checkBoxSelectors:any;
     private presenceLocators:any;
 
