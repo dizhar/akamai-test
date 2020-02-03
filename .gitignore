@@ -3,7 +3,7 @@ node_modules
 .idea
 npm-debug.log
 trace.json
-lib
-package-lock.json
+# lib
+# package-lock.json
 concepts
 report

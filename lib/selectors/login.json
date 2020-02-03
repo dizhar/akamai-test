@@ -1,0 +1,8 @@
+{
+"username": "#userId",
+"password": "#password",
+"lastname": "#lastName",
+"submitButton": "[type='submit']",
+"errMessage": ".overlayText.ng-star-inserted",
+"loadingSpinner": ".spinner-loading"
+}
