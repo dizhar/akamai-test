@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "tests": 5,
+    "passes": 5,
     "pending": 0,
     "failures": 0,
-    "start": "2020-02-01T10:14:27.236Z",
-    "end": "2020-02-01T10:14:36.316Z",
-    "duration": 9080,
-    "testsRegistered": 1,
+    "start": "2020-02-03T11:07:51.895Z",
+    "end": "2020-02-03T11:08:53.190Z",
+    "duration": 61295,
+    "testsRegistered": 5,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0228dce8-8d60-4601-adec-ef780b85799f",
+      "uuid": "d2b952cf-3d8f-4202-9e4d-8456d4a4427c",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,36 +27,36 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0adf96f7-ffad-45ef-a07a-98b55fbd43d4",
+          "uuid": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
           "title": "Authentication test: ",
           "fullFile": "C:\\akamai-test\\lib\\index.js",
           "file": "\\lib\\index.js",
           "beforeHooks": [
             {
-              "title": "\"before all\" hook",
-              "fullTitle": "Authentication test:  \"before all\" hook",
+              "title": "\"before each\" hook",
+              "fullTitle": "Authentication test:  \"before each\" hook",
               "timedOut": false,
-              "duration": 7907,
+              "duration": 7026,
               "state": null,
               "speed": null,
               "pass": false,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, launchPuppeteer_1.default()];\n                case 1:\n                    browser = _a.sent();\n                    return [4, browser.newPage()];\n                case 2:\n                    page = _a.sent();\n                    navMenu = new NavigationMenu_1.default(page);\n                    return [4, navMenu.loadpage()];\n                case 3:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, launchPuppeteer_1.default()];\n                case 1:\n                    browser = _a.sent();\n                    return [4, browser.newPage()];\n                case 2:\n                    page = _a.sent();\n                    _puppeterrGet = new puppeteerGet_1.default(page);\n                    _puppeteerSet = new pupppeteerSet_1.default(page);\n                    _puppeteerVerify = new puppeteerVerify_1.default(page);\n                    return [4, _puppeteerSet.loadPage(baseURL, 30000)];\n                case 3:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
               "err": {},
-              "uuid": "c11a35fc-0bbf-4f12-86b2-dd948dcda09e",
-              "parentUUID": "0adf96f7-ffad-45ef-a07a-98b55fbd43d4",
+              "uuid": "b0037ab9-7fc5-48a0-9566-8190a408c5d2",
+              "parentUUID": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
               "isHook": true,
               "skipped": false
             }
           ],
           "afterHooks": [
             {
-              "title": "\"after all\" hook",
-              "fullTitle": "Authentication test:  \"after all\" hook",
+              "title": "\"after each\" hook",
+              "fullTitle": "Authentication test:  \"after each\" hook",
               "timedOut": false,
-              "duration": 948,
+              "duration": 845,
               "state": null,
               "speed": null,
               "pass": false,
@@ -65,43 +65,119 @@
               "context": null,
               "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, browser.close()];\n                case 1:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
               "err": {},
-              "uuid": "e9b19a69-34b3-44f5-b734-30738b804be8",
-              "parentUUID": "0adf96f7-ffad-45ef-a07a-98b55fbd43d4",
+              "uuid": "83ef9fff-cb0a-458b-afe6-9190ed4c308f",
+              "parentUUID": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
               "isHook": true,
               "skipped": false
             }
           ],
           "tests": [
             {
-              "title": "Login test",
-              "fullTitle": "Authentication test:  Login test",
+              "title": "Should not get a page error message, when not adding the injectable.js script",
+              "fullTitle": "Authentication test:  Should not get a page error message, when not adding the injectable.js script",
               "timedOut": false,
-              "duration": 176,
+              "duration": 3187,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        var performanceTiming, _a, _b, error_1;\n        return __generator(this, function (_c) {\n            switch (_c.label) {\n                case 0:\n                    _c.trys.push([0, 4, , 5]);\n                    return [4, page.addScriptTag({ path: './lib/files/injectable.js' })];\n                case 1:\n                    _c.sent();\n                    _b = (_a = JSON).parse;\n                    return [4, page.evaluate(function () { return JSON.stringify(window.performance.timing); })];\n                case 2: return [4, _b.apply(_a, [_c.sent()])];\n                case 3:\n                    performanceTiming = _c.sent();\n                    console.log(performanceTiming);\n                    page.on('pageerror', function (err) {\n                        console.log('pageerror: ', err);\n                    });\n                    chai_1.expect(true).to.equal(true);\n                    return [3, 5];\n                case 4:\n                    error_1 = _c.sent();\n                    console.log(error_1);\n                    return [3, 5];\n                case 5: return [2];\n            }\n        });\n    });",
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, _puppeteerVerify.verifyPageErrors()];\n                case 1:\n                    _a.sent();\n                    return [4, _puppeteerVerify.verifyWebPagePerformance()];\n                case 2:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
               "err": {},
-              "uuid": "3b919de6-9f45-4380-9ff9-17c4fe487868",
-              "parentUUID": "0adf96f7-ffad-45ef-a07a-98b55fbd43d4",
+              "uuid": "98efe98a-ab1d-4b3a-a89f-46de26e7bf7a",
+              "parentUUID": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should get page error message, \"Error: CX Internals not found...\", when adding the injectable.js script",
+              "fullTitle": "Authentication test:  Should get page error message, \"Error: CX Internals not found...\", when adding the injectable.js script",
+              "timedOut": false,
+              "duration": 181,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, _puppeteerVerify.verifyPageErrors(\"Error: CX Internals not found\")];\n                case 1:\n                    _a.sent();\n                    return [4, _puppeteerSet.addScriptTpPage(\"./lib/files/injectable.js\")];\n                case 2:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "2ee1f846-91d1-4bb2-aa3a-fda0fcb9944a",
+              "parentUUID": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not get a page error, when not adding the injectable.js script into the login page ",
+              "fullTitle": "Authentication test:  Should not get a page error, when not adding the injectable.js script into the login page ",
+              "timedOut": false,
+              "duration": 6536,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, _puppeteerSet.loadPage(\"https://www.delta.com/login/loginPage\", 5000)];\n                case 1:\n                    _a.sent();\n                    return [4, _puppeteerVerify.verifyPageErrors()];\n                case 2:\n                    _a.sent();\n                    return [4, _puppeteerVerify.verifyWebPagePerformance()];\n                case 3:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "1dd6feae-aa4c-4214-a0b5-f56d3b4888d6",
+              "parentUUID": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should get page error message, \"Error: CX Internals not found...\", when adding the injectable.js script into the https://www.delta.com/login/loginPage",
+              "fullTitle": "Authentication test:  Should get page error message, \"Error: CX Internals not found...\", when adding the injectable.js script into the https://www.delta.com/login/loginPage",
+              "timedOut": false,
+              "duration": 6413,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, _puppeteerSet.loadPage(\"https://www.delta.com/login/loginPage\", 5000)];\n                case 1:\n                    _a.sent();\n                    return [4, _puppeteerVerify.verifyPageErrors(\"Error: CX Internals not found\")];\n                case 2:\n                    _a.sent();\n                    return [4, _puppeteerSet.addScriptTpPage(\"./lib/files/injectable.js\")];\n                case 3:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "4dc0b4b1-9976-45da-b17c-15d31b2eec37",
+              "parentUUID": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should get an error message, when submiting incorrect username and password",
+              "fullTitle": "Authentication test:  Should get an error message, when submiting incorrect username and password",
+              "timedOut": false,
+              "duration": 6450,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4, _puppeteerSet.loadPage(\"https://www.delta.com/login/loginPage\", 5000)];\n                case 1:\n                    _a.sent();\n                    return [4, _puppeteerSet.click(page, selectors.username)];\n                case 2:\n                    _a.sent();\n                    return [4, _puppeteerSet.write(page, selectors.username, login.wrongUsername)];\n                case 3:\n                    _a.sent();\n                    return [4, _puppeteerSet.write(page, selectors.lastname, login.wongSurename)];\n                case 4:\n                    _a.sent();\n                    return [4, _puppeteerSet.write(page, selectors.password, login.wrongPassword)];\n                case 5:\n                    _a.sent();\n                    return [4, _puppeteerSet.click(page, selectors.submitButton)];\n                case 6:\n                    _a.sent();\n                    return [4, _puppeteerVerify.verifyElementToDisappear(page, selectors.loadingSpinner)];\n                case 7:\n                    _a.sent();\n                    return [4, _puppeteerVerify.verifyTextIsDisplayed(page, selectors.errMessage, login.errorMessage)];\n                case 8:\n                    _a.sent();\n                    return [2];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "a4d9f166-8e3f-4781-a762-426025df9fb4",
+              "parentUUID": "2f639c0f-3212-4c24-9fc7-ad7da3c02059",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "3b919de6-9f45-4380-9ff9-17c4fe487868"
+            "98efe98a-ab1d-4b3a-a89f-46de26e7bf7a",
+            "2ee1f846-91d1-4bb2-aa3a-fda0fcb9944a",
+            "1dd6feae-aa4c-4214-a0b5-f56d3b4888d6",
+            "4dc0b4b1-9976-45da-b17c-15d31b2eec37",
+            "a4d9f166-8e3f-4781-a762-426025df9fb4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 176,
+          "duration": 22767,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 30000
+          "_timeout": 10000
         }
       ],
       "passes": [],
@@ -111,12 +187,12 @@
       "duration": 0,
       "root": true,
       "rootEmpty": true,
-      "_timeout": 30000
+      "_timeout": 10000
     }
   ],
   "meta": {
     "mocha": {
-      "version": "6.2.2"
+      "version": "7.0.1"
     },
     "mochawesome": {
       "options": {

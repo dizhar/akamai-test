@@ -1,8 +1,0 @@
-{
-    "level2Header": "div.example h2",
-    "level3Header": "div.example h3",
-    "pageSubHeaderLocator": ".subheader",
-    "footerTextLocator": "#page-footer",
-    "pageMessageLocator": ".flash",
-    "closeButton": ".error > .close"
-}

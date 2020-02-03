@@ -1,5 +1,8 @@
 {
-    "username": "input[name='username']",
-    "password": "input[name='password']",
-    "loginButton": "#login > button"
+"username": "#userId",
+"password": "#password",
+"lastname": "#lastName",
+"submitButton": "[type='submit']",
+"errMessage": ".overlayText.ng-star-inserted",
+"loadingSpinner": ".spinner-loading"
 }

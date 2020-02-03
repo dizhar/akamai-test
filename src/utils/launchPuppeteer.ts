@@ -8,7 +8,9 @@ const defaultOptions = {
     timeout: 10000,
     args: ['--start-maximized',
         '--no-sandbox',
-        '--disable-gpu'],
+        "--browser-test",
+        '--disable-dev-shm-usage'
+    ],
 };
 
 export default async (options = undefined) => {

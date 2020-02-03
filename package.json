@@ -1,28 +1,20 @@
 {
   "name": "puppeteer-api-examples",
-  "version": "1.0.1",
-  "description": "Provides examples of how to use the puppeteer api. Tests executed against http://the-internet.herokuapp.com.",
+  "version": "1.0.0",
+  "description": "Provides performance test result with or without injectable ",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 30000 --reporter mochawesome lib/index.js",
-    "moveJsonFiles": "copyfiles -u 1 src/selectors/* src/config/* src/files/* lib",
+    "test": "mocha --timeout 10000 --reporter mochawesome lib/index.js",
+    "moveJsonFiles": "copyfiles -u 1 src/config/* src/selectors/* src/files/* lib",
     "build": "rimraf lib && npm run moveJsonFiles && tsc --outDir lib",
     "testlocal": "npm run build && npm run test"
   },
-  "pre-commit": [
-    "build",
-    "test"
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdavis61/puppeteer-api-examples.git"
+    "url": "git+https://github.com/dizhar/akamai-test"
   },
-  "author": "James Davis",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jdavis61/puppeteer-api-examples/issues"
-  },
-  "homepage": "https://github.com/jdavis61/puppeteer-api-examples#readme",
+  "author": "Daniel Izhar",
+  "license": "MIT",
   "dependencies": {
     "puppeteer": "^2.1.0"
   },
@@ -40,8 +32,6 @@
     "puppeteer-debug": "^1.0.1",
     "rimraf": "^3.0.1",
     "ts-node": "^8.6.2",
-    "tslint": "^6.0.0",
-    "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.7.5"
   }
 }

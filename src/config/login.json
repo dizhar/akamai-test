@@ -1,0 +1,6 @@
+{
+    "errorMessage": "Oops! We're sorry, the information you've entered is not valid. You have a limited number of login attempts before your account will be temporarily locked. Please try again or use",
+    "wrongUsername": "wronguserName", 
+    "wrongPassword": "wrongpassword",
+    "wongSurename": "wronglastname"
+}
