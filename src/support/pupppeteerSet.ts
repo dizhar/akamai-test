@@ -32,21 +32,21 @@
          el.type(text)
     }
 
-    public async click(page: Page, selector: string){
+    public async click(selector: string){
         try {
-            await page.waitForSelector(selector);
-            await page.focus(selector);
-            await page.click(selector);
+            await  this.page.waitForSelector(selector);
+            await  this.page.focus(selector);
+            await  this.page.click(selector);
         } catch (error) {
            throw new Error (`Could not click on selector ${selector}`)
         }
     }
 
-    public async write(page: Page, selector: string, text: string){
+    public async write(selector: string, text: string){
         try {
-            await page.waitForSelector(selector);
-            await page.focus(selector);
-            await page.type(selector, text);
+            await this.page.waitForSelector(selector);
+            await this.page.focus(selector);
+            await this.page.type(selector, text);
         } catch (error) {
             throw new Error (`Could  not type in the ${selector}`)
         }

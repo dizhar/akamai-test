@@ -1,1 +1,1 @@
-require('./tests/performance.spec.js');
+require('./tests/performance-tests.spec.js');

@@ -1,13 +1,13 @@
 {
-  "name": "puppeteer-api-examples",
+  "name": "akamai-test",
   "version": "1.0.0",
   "description": "Provides performance test result with or without injectable ",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 10000 --reporter mochawesome lib/index.js",
+    "test": "mocha --timeout 30000 --reporter mochawesome lib/index.js",
     "moveJsonFiles": "copyfiles -u 1 src/config/* src/selectors/* src/files/* lib",
     "build": "rimraf lib && npm run moveJsonFiles && tsc --outDir lib",
-    "testlocal": "npm run build && npm run test"
+    "start": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
